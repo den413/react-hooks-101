@@ -1,6 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import reducer from "../reducers";
 import { useReducer, useState } from "react";
+import Event from "./Event";
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, []);
@@ -68,6 +69,11 @@ const App = () => {
               <th></th>
             </tr>
           </thead>
+          <tbody>
+            {state.map((event, index) => {
+              <Event key={index} event={event} dispatch={dispatch} />;
+            })}
+          </tbody>
         </table>
       </form>
     </div>
