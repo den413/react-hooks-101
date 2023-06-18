@@ -13,7 +13,7 @@ const operationLogs = (state = [], action) => {
       return [];
 
     default:
-      break;
+      return state;
   }
 };
 
